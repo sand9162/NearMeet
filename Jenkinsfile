@@ -18,7 +18,7 @@ pipeline {
         stage('Build Backend Docker Image') {
             steps {
                 script {
-                    dir('nearMeet-proj/meetup-event-finder-backend') {
+                    dir('meetup-event-finder-backend') {
                         sh 'docker build -t $BACKEND_IMAGE .'
                     }
                 }
@@ -28,7 +28,7 @@ pipeline {
         stage('Build Frontend Docker Image') {
             steps {
                 script {
-                    dir('nearMeet-proj/meetup-event-finder') {
+                    dir('meetup-event-finder') {
                         sh 'docker build -t $FRONTEND_IMAGE .'
                     }
                 }
